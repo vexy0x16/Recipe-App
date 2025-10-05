@@ -1,0 +1,409 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background: #1a1a1a;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container{
+    width: 100%;
+    background: url("./pexels-asya-vlasova-228168-2575379.jpg");
+    padding: 40px 20px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #ffffff;
+}
+
+.container h1{
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+.container p{
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;  
+}
+.searchBox{
+    max-width: 600px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+}
+.searchBox input{
+    background-color: rgba(135, 133, 133, 0.55);
+    color: #ffffff;
+    padding:0.6rem 0.6rem ;
+    width: 50%;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    font-size:1rem;
+    
+}
+.searchBox input::placeholder{
+    color: #ffffff;
+}
+.searchBox button{
+    background: #6a6a6a;
+    border: none;
+    padding: 0.6rem 0.8rem;
+    width: 18%;
+    font-size: 1rem;
+    border-radius: 0 5px 5px 0;
+    color: #ffffff;
+    cursor: pointer;
+}
+#recipe-notFound{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+.recipe-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    gap: 30px;
+}
+.recipe-card{
+    width: 360px;
+    height: 500px;
+    background-color:rgba(255, 255, 255, 0.55);
+    margin-top: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(255 255 255 0.9);
+    transition: all 0.5s ease-in-out;
+
+}
+.recipe-card img{
+    width: 100%;
+    height: 240px;
+    margin-bottom: 1rem;
+    border-radius: 10px 10px 0px 0px;
+}
+.recipe-card button{
+    padding: 10px;
+    background: #606060;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.5s ease-in;
+}
+.recipe-card button:hover{
+    background: #787878;
+}
+.recipe-card h2{
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+.recipe-card p{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.recipe-details-content{
+    background-color: rgba(255, 255, 255, 0.55);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%, -50%);
+    padding: 18px;
+    width: 40%;
+    height: 60%;
+    z-index: 999;
+    border-radius: 20px;
+    display: none;
+    backdrop-filter: blur(20px);
+}
+.recipe-details-content h3{
+    margin: 0.8rem 0 0 0;
+    color: #1a1a1a;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.recipeDetails{
+    margin: 1rem 0 0 0;
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    height: 240px;
+    overflow-y: auto;
+}
+.Ingredients h3{
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+.Ingredients ul{
+    padding: 0 30px;
+}
+.Instructions h3{
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+.Instructions p{
+    padding: 0 10px;
+}
+.close-btn{
+    position: absolute;
+    width: 80px;
+    bottom: 10px;
+    background: #1a1a1a;
+    padding: 8px 10px;
+    color: #ffffff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in;
+}
+.close-btn:hover{
+    background-color: rgb(41, 41, 41);
+}
+
+/* For mobile responsive UI */
+@media screen and (width <= 320px){
+    .container h1{
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+    }
+    .container p{
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;  
+    }
+    .searchBox{
+    max-width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    }
+    .searchBox input{
+    background-color: rgba(135, 133, 133, 0.75);
+    color: #ffffff;
+    padding:0.5rem 0.5rem ;
+    width: 70%;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    font-size:1rem;
+    }
+    .searchBox input::placeholder{
+        color: rgba(255, 255, 255, 0.75);
+    }
+    .searchBox button{
+    background: #6a6a6a;
+    border: none;
+    padding: 0.5rem 0.2rem;
+    width: 18%;
+    font-size: 0.8rem;
+    border-radius: 0 5px 5px 0;
+    color: #ffffff;
+    cursor: pointer;
+    }
+    .recipe-notFound{
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    }
+    .recipe-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    gap: 10px;
+    }
+    .recipe-card{
+    width: 100%;
+    height: auto;
+    background: #ffffff;
+    margin-top: 1rem;
+    text-align: center;
+    position: relative;
+    }
+    .recipe-card img{
+    width: 100%;
+    height: 240px;
+    margin-bottom: 0.5rem;
+    }
+    .recipe-card button{
+    padding: 6px;
+    background: #606060;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    font-size: 0.9rem;
+    }
+    .recipe-card h2{
+    font-size: 1.6rem;
+    font-weight: 500;
+    }
+    .recipe-card p{
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-top: 5px;
+    }
+    .recipe-details-content{
+    background-color: rgba(135, 133, 133, 0.55);
+    position: fixed;
+    width: 95%;
+    height: 500px;
+    z-index: 999;
+    border-radius: 8px;
+    display: none;
+    }
+    .recipe-details-content h3{
+    margin: 0.6rem 0;
+    color: #1a1a1a;
+    font-size: 1.6rem;
+    font-weight: 700;
+    }
+    .recipe-details-content p{
+    margin: 1rem 0;
+    color: #1a1a1a;
+    font-size: 1rem;
+    overflow-y: scroll;
+    height: 360px;
+    }
+    .close-btn{
+    position: absolute;
+    width: 80px;
+    bottom: 10px;
+    background: #1a1a1a;
+    padding: 8px 10px;
+    color: #ffffff;
+    border-radius: 8px;
+    border: none;
+    }
+}
+@media screen and (width <= 768px){
+    .container h1{
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+    }
+    .container p{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;  
+    }
+    .searchBox{
+    max-width: 70%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    }
+    .searchBox input{
+    background-color: rgba(135, 133, 133, 0.75);
+    color: #ffffff;
+    padding:0.6rem 0.6rem ;
+    width: 65%;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    font-size:1rem;
+    }
+    .searchBox input::placeholder{
+        color: rgba(255, 255, 255, 0.75);
+    }
+    .searchBox button{
+    background: #6a6a6a;
+    border: none;
+    padding: 0.5rem 0.2rem;
+    width: 18%;
+    font-size: 1rem;
+    border-radius: 0 5px 5px 0;
+    color: #ffffff;
+    cursor: pointer;
+    }
+    .recipe-notFound{
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    }
+    .recipe-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 30px;
+    }
+    .recipe-card{
+    width: 300px;
+    height: auto;
+    background: #ffffff;
+    margin-top: 1rem;
+    text-align: center;
+    position: relative;
+    }
+    .recipe-card img{
+    width: 100%;
+    height: 240px;
+    margin-bottom: 0.5rem;
+    }
+    .recipe-card button{
+    padding: 6px;
+    background: #606060;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    margin: 8px 0;
+    font-size: 0.9rem;
+    }
+    .recipe-card h2{
+    font-size: 1.6rem;
+    font-weight: 500;
+    }
+    .recipe-card p{
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-top: 5px;
+    }
+    .recipe-details-content{
+    background-color: rgba(135, 133, 133, 0.55);
+    position: fixed;
+    width: 82%;
+    height: 500px;
+    z-index: 999;
+    border-radius: 8px;
+    display: none;
+    }
+    .recipe-details-content h3{
+    margin: 0.6rem 0;
+    color: #1a1a1a;
+    font-size: 1.6rem;
+    font-weight: 700;
+    }
+    .recipe-details-content p{
+    margin: 1rem 0;
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    overflow-y: scroll;
+    height: 360px;
+    }
+    .close-btn{
+    position: absolute;
+    width: 80px;
+    bottom: 10px;
+    background: #1a1a1a;
+    padding: 8px 10px;
+    color: #ffffff;
+    border-radius: 8px;
+    border: none;
+    }
+}
